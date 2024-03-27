@@ -16,8 +16,8 @@ body, html {
 
 .character {
   position: absolute;
-  width: 100px; /* Set this to the size of your characters */
-  height: 100px; /* Set this to the size of your characters */
+  width: 100px; 
+  height: 100px; 
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -48,21 +48,21 @@ body, html {
 
 .chat-box {
   position: absolute;
-  bottom: 50px; /* Adjust as needed */
+  bottom: 50px; 
   left: 50%;
   transform: translateX(-50%);
-  width: 80%; /* Adjust as needed */
+  width: 80%; 
 }
 
 .messages {
-  height: 500px; /* Adjust as needed */
+  height: 500px; 
   border: 1px solid #ddd;
   margin-bottom: 20px;
   overflow-y: auto;
 }
 
 .chat-input {
-  width: calc(100% - 100px); /* Adjust width based on the send button */
+  width: calc(100% - 100px);
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
