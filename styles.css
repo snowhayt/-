@@ -1,54 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 body {
-  font-family: "Black Han Sans", sans-serif;
+
   font-weight: 400;
   font-style: normal;
   text-align: center;
   margin: 0;
   padding: 0;
-  background-color: #fff;
+  /*background-color: #fff;*/
   height: 1500px;
+
+  background: url('skybg.gif') no-repeat center center fixed;
+
+  /* Ensure the background covers the entire body */
+  background-size: cover;
+
 }
 
 .header {
+  font-family: "Black Han Sans", sans-serif;
   text-align: center;
   padding: 20px;
   font-size: 150px;
   color: orange;
 }
 
+.search-button {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+
 .search-container {
   position: fixed;
-  top: 20%; 
+  top: 50%; /* Adjusted so that search-container is higher up */
   left: 50%;
   transform: translateX(-50%);
   max-width: 900px;
-  width: 80%; 
+  width: 80%; /* Use a percentage width that fits the screen */
   padding: 20px;
-  z-index: 100; 
+  z-index: 100; /* Ensure this is above other elements */
 }
 
 .search-box {
-  width: calc(100% - 100px); 
+  width: calc(100% - 100px); /* Adjust the width to leave space for the button */
   padding: 10px;
   margin-top: 20px;
   border: 2px solid #ddd;
   border-radius: 5px;
-  box-sizing: border-box; 
+  box-sizing: border-box; /* Include padding and border in the element's width */
 }
 
 .search-button {
   position: absolute;
-  right: 70px; 
-  top: 42px; 
+  right: 90px; /* Align to the right edge of the search-container */
+  top: 42px; /* Adjust as necessary */
   width: 35px;
   height: 35px;
   cursor: pointer;
   border: none;
   background: url('send.png') no-repeat center;
   background-size: contain;
-  z-index: 101; 
+  z-index: 101; /* Above the search-box */
 }
+
 
 .character {
   position: fixed;
@@ -59,42 +74,100 @@ body {
   height: 1000px;
   background: url('character.png') no-repeat;
   background-size: contain;
+  transition: left 0.5s, right 0.5s, opacity 0.5s;
+}
+
+.character2 {
+  position: fixed;
+  align-content: center;
+  right: 0;
+  bottom: 10px;
+  width: 750px;
+  height: 1000px;
+  background: url('character2.png') no-repeat right bottom;
+  background-size: cover;
+  transition: left 0.5s, right 0.5s, opacity 0.5s;
 }
 
 .chat-box {
   text-align: left;
-  border: 1px solid #ddd;
+  border: none;
   margin: auto;
   padding: 20px;
-  width: 80%; 
+  width: 80%; /* Same width as search-container for consistency */
   height: 200px;
   overflow-y: scroll;
   position: fixed;
   left: 50%;
-  top: -80%; 
+  top: -90%; /* Move this down so it doesn't overlap the search-container */
   transform: translate(-50%, -50%);
-  z-index: 99; 
+  z-index: 99; /* Lower z-index so it's under the search-container */
   background: url('message-background.png') no-repeat center center;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+
 }
 
-
+/* Style for user messages */
 .user-message {
   text-align: right;
   margin: 5px;
   padding: 5px;
-  background-color: #e7f3ff; 
+  background-color: #e7f3ff; /* Light blue background for user messages */
   border-radius: 5px;
   clear: both;
+  display: inline-block; /* Adjusts the background to match the text length */
+  max-width: 80%; /* Prevents the message from being too wide */
+  align-self: flex-end;
 }
-
 
 .ai-message {
   text-align: left;
   margin: 5px;
   padding: 5px;
-  background-color: #f1e7ff; 
+  background-color: #f1e7ff; /* Light purple background for AI messages */
   border-radius: 5px;
   clear: both;
+  display: inline-block; /* Adjusts the background to match the text length */
+  max-width: 80%; /* Prevents the message from being too wide */
+  align-self: flex-start;
 }
+
+@keyframes typing {
+    0% { width: 0; }
+    100% { width: 100%; }
+  }
+
+  .typing-animation {
+    animation: typing 1s steps(10, end);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+/* CSS to hide the scrollbar in WebKit browsers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.chat-box::-webkit-scrollbar {
+  width: 12px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: #a0a0a0;
+  border-radius: 10px;
+  border: 3px solid #f0f0f0;
+}
+
+.chat-box::-webkit-scrollbar-thumb:hover {
+  background-color: #808080;
+}
+
+/* No need to toggle opacity on scrollbar, focusing on visibility */
 

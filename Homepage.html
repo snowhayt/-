@@ -1,23 +1,38 @@
 <!DOCTYPE html>
-<html lang="kr">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hey Sunny</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+  .container {
+    max-width: 1200px; /* Maximum width */
+    margin: auto; /* Center the container */
+    padding: 20px; /* Padding for inner spacing */
+  }
+  </style>
 </head>
 <body>
 
-<div class="header">HELLO SUNNY!</div>
-<div class="character"></div>
-<div class="search-container">
-  <div class="chat-box"></div>
-  <input type="text" class="search-box" placeholder="입력...">
-  <button class="search-button"></button>
+<div class="container">
+  <div class="header">HELLO SUNNY!</div>
+  <!-- Assuming characters and chat box should be part of the main content area -->
+  <div class="character"></div>
+  <div class="character2"></div>
+  <div class="search-container">
+    <div class="chat-box"></div>
+    <input type="text" class="search-box" placeholder="입력...">
+    <button class="search-button"></button>
+    <button id="voice-search-btn">🎙</button>
 </div>
 
-
-
 <script src="script.js"></script>
+<script>
+  // If you have specific inline JavaScript, it should be separate from the external script reference
+  document.addEventListener('DOMContentLoaded', function() {
+    // Assuming setPosition and other initializations are defined in script.js
+  });
+</script>
 </body>
 </html>
