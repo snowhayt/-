@@ -7,12 +7,10 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-  /*background-color: #fff;*/
   height: 1500px;
 
   background: url('skybg.gif') no-repeat center center fixed;
 
-  /* Ensure the background covers the entire body */
   background-size: cover;
 
 }
@@ -33,35 +31,35 @@ body {
 
 .search-container {
   position: fixed;
-  top: 50%; /* Adjusted so that search-container is higher up */
+  top: 50%; 
   left: 50%;
   transform: translateX(-50%);
   max-width: 900px;
-  width: 80%; /* Use a percentage width that fits the screen */
+  width: 80%; 
   padding: 20px;
-  z-index: 100; /* Ensure this is above other elements */
+  z-index: 100; 
 }
 
 .search-box {
-  width: calc(100% - 100px); /* Adjust the width to leave space for the button */
+  width: calc(100% - 100px);
   padding: 10px;
   margin-top: 20px;
   border: 2px solid #ddd;
   border-radius: 5px;
-  box-sizing: border-box; /* Include padding and border in the element's width */
+  box-sizing: border-box; 
 }
 
 .search-button {
   position: absolute;
-  right: 90px; /* Align to the right edge of the search-container */
-  top: 42px; /* Adjust as necessary */
+  right: 90px;
+  top: 42px; 
   width: 35px;
   height: 35px;
   cursor: pointer;
   border: none;
   background: url('send.png') no-repeat center;
   background-size: contain;
-  z-index: 101; /* Above the search-box */
+  z-index: 101;
 }
 
 
@@ -94,14 +92,14 @@ body {
   border: none;
   margin: auto;
   padding: 20px;
-  width: 80%; /* Same width as search-container for consistency */
+  width: 80%;
   height: 200px;
   overflow-y: scroll;
   position: fixed;
   left: 50%;
-  top: -90%; /* Move this down so it doesn't overlap the search-container */
+  top: -90%;
   transform: translate(-50%, -50%);
-  z-index: 99; /* Lower z-index so it's under the search-container */
+  z-index: 99;
   background: url('message-background.png') no-repeat center center;
   background-size: cover;
   display: flex;
@@ -109,16 +107,15 @@ body {
 
 }
 
-/* Style for user messages */
 .user-message {
   text-align: right;
   margin: 5px;
   padding: 5px;
-  background-color: #e7f3ff; /* Light blue background for user messages */
+  background-color: #e7f3ff; 
   border-radius: 5px;
   clear: both;
-  display: inline-block; /* Adjusts the background to match the text length */
-  max-width: 80%; /* Prevents the message from being too wide */
+  display: inline-block; 
+  max-width: 80%;
   align-self: flex-end;
 }
 
@@ -126,11 +123,11 @@ body {
   text-align: left;
   margin: 5px;
   padding: 5px;
-  background-color: #f1e7ff; /* Light purple background for AI messages */
+  background-color: #f1e7ff;
   border-radius: 5px;
   clear: both;
-  display: inline-block; /* Adjusts the background to match the text length */
-  max-width: 80%; /* Prevents the message from being too wide */
+  display: inline-block;
+  max-width: 80%;
   align-self: flex-start;
 }
 
@@ -145,7 +142,6 @@ body {
     white-space: nowrap;
   }
 
-/* CSS to hide the scrollbar in WebKit browsers */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
